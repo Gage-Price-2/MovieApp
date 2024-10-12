@@ -1,20 +1,58 @@
 package com.gcu.movie.controllers;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
+import com.gcu.movie.business.MovieBusinessServiceInterface;
+import com.gcu.movie.models.MovieModel;
 @Controller
-@RequestMapping("/")
+@RequestMapping("/movies")
 public class MovieController {
-	//private final MovieService movieService;
+
+	//Our business service interface instance(uses bean)
+	@Autowired
+	private MovieBusinessServiceInterface service;
 	
-	@GetMapping("/movies")
-	public String showMovies() {
-        System.out.println("here");
+	//Method to get all movie and display the list of movies
+	@RequestMapping("/")
+	public String showMovies(Model model) {
+        model.addAttribute("title", "My Movies");
+        // service.getMovies() returns a list of all movies in the "movies" attribute
+		model.addAttribute("movies", service.getMovies());
+		//return view
         return "list";
     }
 	
+	//Method to display the create form to the user
+	@GetMapping("/create")
+    public String showCreateEventForm(Model model) {
+		//pass in an empty model
+        model.addAttribute("movie", new MovieModel());
+        model.addAttribute("pageTitle", "Create Movie");
+        //show create-movie form view
+        return "create-movie";
+    }
+	
+	//Method to handle the creation of a movie, returns user back to home
+	@PostMapping("/create")
+    public String createEvent(MovieModel movie, BindingResult result, Model model) {
+		//If there is an error, return back to the create page
+        if (result.hasErrors()) {
+            model.addAttribute("pageTitle", "Create Event");
+            return "create-event";
+        }
+        //Calls business service method(returns boolean)
+        service.create(movie);
+        return "redirect:/movies/";
+    }
 }
 /*
 @Controller

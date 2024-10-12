@@ -2,44 +2,31 @@
 <html xmlns:th="https://www.thymeleaf.org" xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Movie App</title>
+ <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 <div th:fragment="header">
-		<div align="center">
-			<h1>Movie Organizer</h1>	
-		</div>
-	<div class="bs-example">
-		<nav class="navbar navbar-default">
-			<div class="navbar-header">
-				<button type="button" data-target="navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="#" class="navbar-brand">GCU</a>
-			</div>
-			<div id="navbarCollapse" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="#" target="_blank">Home</a></li>
-					<li><a href="#" target="_blank">Create</a></li>
-					<li><a href="#" target="_blank">News and Events</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/">Start Page</a></li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-	
-	<!-- Page Title and Log -->
-	<h2 th:text="${title}">Default Message Text</h2><br/>
-	<img th:src="@{/images/gcu-logo.jpg}" alt="GCU LOGO" width="300" height="169"/><br/><br/>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/movies/">Movie App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/movies/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/movies/create">Create</a>
+     
+    </ul>
+  </div>
+</nav>
 </div>
 <!-- Common footer fragment -->
 <div th:fragment="footer">
-	<h5 style="color:purple; text-align: center; position: fixed; bottom: 0; width:100%;">Copyright 2020 Grand Canyon University</h5>
+	<h5 style="color:black; text-align: center; bottom: 0; width:100%;">Movie App</h5>
 </div>
 
 </body>
