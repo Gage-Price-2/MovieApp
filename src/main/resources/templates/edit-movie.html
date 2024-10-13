@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
 <head>
-    <title>Create Order</title>
- <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>Edit Movie</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-	 <div class="container mt-4">
+    <div class="container mt-4">
         <div layout:fragment="content">
-            <h1>Create Order</h1>
-            <form th:action="@{/movies/create}" th:object="${movie}" method="post">
+            <h1>Edit Movie</h1>
+            <form th:action="@{/movies/edit/{id}(id=${movie.id})}" th:object="${movie}" method="post">
                 <div class="form-group">
                     <label for="title">Title:</label>
                     <input type="text" id="title" th:field="*{title}" class="form-control" placeholder="Enter movie title"/>
@@ -29,9 +29,9 @@
                     <input type="number" id="rating" th:field="*{rating}" class="form-control" placeholder="Enter movie rating (1-100)" min="1" max="100"/>
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-3">Create Movie</button>
+                <button type="submit" class="btn btn-primary mt-3">Update Movie</button>
             </form>
         </div>
     </div>
-   </body>
+</body>
 </html>

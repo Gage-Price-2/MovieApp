@@ -40,5 +40,33 @@ public class MovieBusinessService implements MovieBusinessServiceInterface{
 		boolean success = service.create(movieEntity);
 		return success;
 	}
+	
+	
+	@Override
+	public MovieModel findById(int id) {
+		// TODO Auto-generated method stub
+		MovieEntity movieEntity = service.findById(id);
+		//return as model not entity
+		return new MovieModel(movieEntity.getId(), movieEntity.getTitle(), movieEntity.getGenre(), movieEntity.getImage(), movieEntity.getRating());
+	}
+	
+	//Update based off an id, set new values to movie model values
+	public boolean update(int id, MovieModel movie) {
+		//convert from movieModel to MovieEntity
+		MovieEntity movieEntity = new MovieEntity();
+		movieEntity.setId(id);
+		movieEntity.setTitle(movie.getTitle());
+		movieEntity.setGenre(movie.getGenre());
+		movieEntity.setImage(movie.getImage());
+		movieEntity.setRating(movie.getRating());
+		//Call the service.create method to handle the creation
+		boolean success = service.update(movieEntity);
+		return success;
+	}
+
+	public void delete(int id) {
+
+		service.delete(id);
+	}
 
 }

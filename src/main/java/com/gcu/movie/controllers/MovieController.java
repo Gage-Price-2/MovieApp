@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -51,6 +53,27 @@ public class MovieController {
         }
         //Calls business service method(returns boolean)
         service.create(movie);
+        return "redirect:/movies/";
+    }
+	
+	//Method to delete by id
+	@PostMapping("/delete/{id}")
+    public String deleteEvent(@PathVariable int id) {
+        service.delete(id);
+        return "redirect:/movies/";
+    }
+	
+	@GetMapping("/edit/{id}")
+    public String showEditEventForm(@PathVariable int id, Model model) {
+        MovieModel movie = service.findById(id);
+        model.addAttribute("movie", movie);
+        return "edit-movie";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String updateEvent(@PathVariable int id, @ModelAttribute MovieModel movie, Model model) {
+    	System.out.println("Edit 2: " + movie.Title );
+        service.update(id, movie);
         return "redirect:/movies/";
     }
 }
