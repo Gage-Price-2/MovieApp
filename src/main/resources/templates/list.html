@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <title>Movie Cards</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -23,12 +22,8 @@
             gap: 20px;
         }
     </style>
-=======
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
->>>>>>> refs/remotes/origin/main
 </head>
 <body>
-<<<<<<< HEAD
     <div layout:fragment="content">
         <div class="container-fluid">
             <h1 class="text-center mb-4" th:text="${title}">Movie Cards</h1>
@@ -51,33 +46,4 @@
         </div>
     </div>
 </body>
-</html>
-=======
-    <div layout:fragment="content" class="container mt-5">
-        <h2 class="text-center" th:text="${title}">Movies</h2><br/>
-
-        <div class="row">
-            <div class="col-12" th:if="${movies.empty}">
-                <div class="alert alert-warning text-center">No Movies Available</div>
-            </div>
-
-            <div class="col-md-4 mb-4" th:each="movie : ${movies}">
-                <div class="card h-100">
-                    <img class="card-img-top" th:src="${movie.Image}" alt="Movie Image">
-                    <div class="card-body">
-                        <h5 class="card-title text-center" th:text="${movie.Title}">Movie Title</h5>
-                        <p class="card-text text-center" th:text="${movie.Genre}">Genre</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <span class="badge badge-primary" th:text="${movie.Rating}">Rating</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
->>>>>>> refs/remotes/origin/main
 </html>
