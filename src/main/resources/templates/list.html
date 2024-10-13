@@ -1,73 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
 <head>
-<meta charset="UTF-8">
- <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-	<div layout:fragment="content">
-	<h2 th:text="${title}">test</h2><br/>
-	
-	<table style="width:80%">
-	<thead>
-		<tr>
-			<th style="text-align: center">Title</th>
-			<th style="text-align: center">Genre</th>
-			<th style="text-align: center">Image</th>
-			<th style="text-align: center">Rating</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr th:if="${movies.empty}">
-			<td style="text-align: center" colspan="4">No Movies Avaliable</td>
-		</tr>
-		<tr th:each="movie : ${movies}">
-			<td style="text-align: center"><h5 th:text="${movie.Title}">000000001</h5></td>
-			<td style="text-align: center"><h5 th:text="${movie.Genre}">Product 1</h5></td>
-			<td style="text-align: center"><img th:src="${movie.Image}" alt="Movie Image"></td>
-			<td style="text-align: center"><h5 th:text="${movie.Rating}">1</h5></td>
-			
-		</tr>
-	</tbody>
-</table>
-	
-	</div>
+    <div layout:fragment="content" class="container mt-5">
+        <h2 class="text-center" th:text="${title}">Movies</h2><br/>
+
+        <div class="row">
+            <div class="col-12" th:if="${movies.empty}">
+                <div class="alert alert-warning text-center">No Movies Available</div>
+            </div>
+
+            <div class="col-md-4 mb-4" th:each="movie : ${movies}">
+                <div class="card h-100">
+                    <img class="card-img-top" th:src="${movie.Image}" alt="Movie Image">
+                    <div class="card-body">
+                        <h5 class="card-title text-center" th:text="${movie.Title}">Movie Title</h5>
+                        <p class="card-text text-center" th:text="${movie.Genre}">Genre</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <span class="badge badge-primary" th:text="${movie.Rating}">Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-<style>
-	td{
-	    max-width: 400px;
-	}
-	table {
-       width: 80%;
-        border-collapse: collapse; /* Ensure cells border each other */
-        margin: 20px auto; /* Center the table on the page */
-    }
-        th, td {
-            border: 1px solid #ddd; /* Border for each cell */
-            padding: 8px; /* Padding inside cells */
-            text-align: center; /* Center align text in cells */
-        }
-        th {
-            background-color: #f2f2f2; /* Light gray background for header cells */
-        }
-        td img {
-            max-width: 70%; /* Ensure images don't exceed their cell width */
-            height: auto; /* Maintain image aspect ratio */
-            display: block; /* Ensure images do not affect vertical alignment of text */
-            margin: 0 auto; /* Center images horizontally within cell */
-        }
-        td:nth-child(3) {
-            width: 25%; /* Adjust width of image column */
-        }
-        td h5 {
-            margin: 0; /* Remove default margins for h5 tags */
-        }
-        tbody tr:nth-child(even) {
-            background-color: #f9f9f9; /* Alternate row background color */
-        }
-        tbody tr:hover {
-            background-color: #f2f2f2; /* Hover effect for rows */
-        }
-</style>
