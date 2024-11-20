@@ -35,7 +35,7 @@
                         <p class="card-text" th:text="'Genre: ' + ${movie.genre}">Genre: Action</p>
                         <p class="card-text" th:text="'Rating: ' + ${movie.rating} + '/100'">Rating: 8.0</p>
                         <form th:action="@{/movies/delete/{id}(id=${movie.id})}" method="post">
-                            <button type="submit" class="btn btn-danger btn-sm mr-2">Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm mr-2">Delete V2</button>
                         </form>
                         <form th:action="@{/movies/edit/{id}(id=${movie.id})}" method="get">
                             <button type="submit" class="btn btn-primary btn-sm" style="margin-top: 5px; margin-right: 5px;">Edit</button>
