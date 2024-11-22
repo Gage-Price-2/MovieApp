@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.gcu.business.OrdersBusinessService;
 import com.gcu.movie.data.entity.MovieEntity;
 import com.gcu.movie.repository.MoviesRepository;
 
@@ -17,6 +20,7 @@ public class MovieDataService implements DataAccessInterface<MovieEntity>{
 
 	@Autowired
 	private MoviesRepository moviesRepository;
+	private static final Logger logger = LoggerFactory.getLogger(MovieDataService.class);
 	
 	public MovieDataService(MoviesRepository moviesRepository) {
 		this.moviesRepository = moviesRepository;
@@ -35,6 +39,7 @@ public class MovieDataService implements DataAccessInterface<MovieEntity>{
 		}
 		catch(Exception e)
 		{
+			logger.atError();
 			e.printStackTrace();
 		}
 		return movies;
@@ -49,6 +54,7 @@ public class MovieDataService implements DataAccessInterface<MovieEntity>{
 			
 		}
 		catch(Exception e) {
+			logger.atError();
 			return null;
 		}
 		
@@ -61,6 +67,7 @@ public class MovieDataService implements DataAccessInterface<MovieEntity>{
 			moviesRepository.save(t);
 			return true;
 		}catch(Exception e) {
+			logger.atError();
 			return false;
 		}
 	}
@@ -73,6 +80,7 @@ public class MovieDataService implements DataAccessInterface<MovieEntity>{
 			moviesRepository.save(t);
 			return true;
 		}catch(Exception e) {
+			logger.atError();
 			return false;
 		}
 	}
@@ -84,6 +92,7 @@ public class MovieDataService implements DataAccessInterface<MovieEntity>{
 			moviesRepository.deleteById(id);
 			return true;
 		}catch(Exception e) {
+			logger.atError();
 			return false;
 		}
 	}

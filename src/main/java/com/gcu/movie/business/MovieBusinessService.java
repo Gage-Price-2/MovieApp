@@ -3,9 +3,11 @@ package com.gcu.movie.business;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
+import com.gcu.business.OrdersBusinessService;
 import com.gcu.movie.data.MovieDataService;
 import com.gcu.movie.data.entity.MovieEntity;
 import com.gcu.movie.models.MovieModel;
@@ -16,6 +18,8 @@ public class MovieBusinessService implements MovieBusinessServiceInterface{
 	public MovieDataService service;
 	//Override method from interface
 	//Used to call the data repository and collect a list of <ModieModel>
+	private static final Logger logger = LoggerFactory.getLogger(MovieBusinessService.class);
+	
 	@Override
 	public List<MovieModel> getMovies() {
 		// TODO Auto-generated method stub
@@ -26,6 +30,7 @@ public class MovieBusinessService implements MovieBusinessServiceInterface{
 		for(MovieEntity entity : moviesEntity) {
 			moviesDomain.add(new MovieModel(entity.getId(), entity.getTitle(), entity.getGenre(), entity.getImage(), entity.getRating()));
 		}
+		logger.atInfo();
 		return moviesDomain;
 	}
 	
@@ -38,6 +43,7 @@ public class MovieBusinessService implements MovieBusinessServiceInterface{
         movieEntity.setRating(movie.getRating());
         //Call the service.create method to handle the creation
 		boolean success = service.create(movieEntity);
+		
 		return success;
 	}
 	
