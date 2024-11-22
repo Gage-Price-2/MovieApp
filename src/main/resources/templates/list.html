@@ -27,6 +27,7 @@
     <div layout:fragment="content">
         <div class="container-fluid">
             <h1 class="text-center mb-4" th:text="${title}">Movie Cards</h1>
+            <h1>Pipeline test!!!</h1>
             <div class="card-columns">
                 <div th:each="movie : ${movies}" class="card">
                     <img th:src="${movie.image}" class="card-img-top" alt="Movie Image">

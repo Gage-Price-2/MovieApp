@@ -14,7 +14,7 @@ public class AopConfiguration {
 		public void monitor()
 		{
 		}
-
+		//comment
 		// Get an instance of the Tracer that will be used in the Aspect
 		@Bean
 		public Tracer tracer()
