@@ -57,3 +57,34 @@
 2024-11-21 19:05:24,076 INFO o.s.b.StartupInfoLogger [main] Started MovieApplicationTests in 6.781 seconds (process running for 8.561)
 2024-11-21 19:05:25,915 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2024-11-21 19:05:26,549 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-11-21 19:07:44,629 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-11-21 19:07:44,670 INFO o.s.b.StartupInfoLogger [restartedMain] Starting MovieApplication using Java 20.0.2 with PID 25240 (C:\Users\Gage\git\movie\target\classes started by Gage in C:\Users\Gage\git\movie)
+2024-11-21 19:07:44,671 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-11-21 19:07:44,672 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-11-21 19:07:44,994 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-21 19:07:44,994 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-21 19:07:45,819 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-11-21 19:07:45,877 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 52 ms. Found 1 JDBC repository interface.
+2024-11-21 19:07:46,467 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2024-11-21 19:07:46,479 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-21 19:07:46,483 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-11-21 19:07:46,484 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-21 19:07:46,542 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-11-21 19:07:46,543 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1547 ms
+2024-11-21 19:07:46,687 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-11-21 19:07:48,118 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72f11f84
+2024-11-21 19:07:48,121 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-11-21 19:07:48,262 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-11-21 19:07:48,851 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2024-11-21 19:07:48,875 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path '/'
+2024-11-21 19:07:48,886 INFO o.s.b.StartupInfoLogger [restartedMain] Started MovieApplication in 4.834 seconds (process running for 6.129)
+2024-11-21 19:08:01,433 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-21 19:08:01,434 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-11-21 19:08:01,436 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2024-11-21 19:08:02,971 WARN n.n.u.t.e.ExpressionProcessor [http-nio-8080-exec-1] Fragment expression "layouts/defaultTemplate" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2024-11-21 19:08:03,231 WARN o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [http-nio-8080-exec-1] [THYMELEAF][http-nio-8080-exec-1][layouts/defaultTemplate] Deprecated unwrapped fragment expression "layouts/common :: header" found in template layouts/defaultTemplate, line 12, col 14. Please use the complete syntax of fragment expressions instead ("~{layouts/common :: header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-11-21 19:08:03,375 WARN o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [http-nio-8080-exec-1] [THYMELEAF][http-nio-8080-exec-1][layouts/defaultTemplate] Deprecated unwrapped fragment expression "layouts/common :: footer" found in template layouts/defaultTemplate, line 18, col 14. Please use the complete syntax of fragment expressions instead ("~{layouts/common :: footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-11-21 19:08:14,453 INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
+2024-11-21 19:08:14,455 INFO o.a.j.l.DirectJDKLog [RMI TCP Connection(4)-127.0.0.1] Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-21 19:08:14,747 INFO c.z.h.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2024-11-21 19:08:15,602 INFO c.z.h.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
