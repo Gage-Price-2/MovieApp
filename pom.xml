@@ -8,12 +8,20 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.gcu</groupId>
+	<!--<groupId>com.gcu</groupId>
 	<artifactId>movie</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>movie</name>
 	<description>Movie Organizer</description>
 	
+	<properties>
+		<java.version>17</java.version>
+	</properties>-->
+	<groupId>com.gcu</groupId>
+	<artifactId>server-time</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>movie-2</name>
+	<description>MovieOrganizer</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -55,6 +63,10 @@
 			<artifactId>server-time</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
