@@ -10,7 +10,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 public class AopConfiguration {
 	// Setup Pointcuts to the Controllers, Rest Controllers, Business Services, and Data Services
-		@Pointcut("execution(* com.gcu..controller..*(..)) || execution(* com.gcu..business..*(..)) || execution(* com.gcu..data..*(..))")
+		@Pointcut("execution(* com.gcu..movie..controller..*(..)) || execution(* com.gcu..movie..business..*(..)) || execution(* com.gcu..movie..data..*(..))")
 		public void monitor()
 		{
 		}

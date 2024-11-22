@@ -45,3 +45,15 @@
 2024-11-21 18:58:12,188 INFO o.a.j.l.DirectJDKLog [RMI TCP Connection(4)-127.0.0.1] Stopping ProtocolHandler ["http-nio-8080"]
 2024-11-21 18:58:12,479 INFO c.z.h.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
 2024-11-21 18:58:13,363 INFO c.z.h.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2024-11-21 19:05:17,919 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2024-11-21 19:05:17,952 INFO o.s.b.StartupInfoLogger [main] Starting MovieApplicationTests using Java 20.0.2 with PID 29668 (started by Gage in C:\Users\Gage\git\movie)
+2024-11-21 19:05:17,954 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-11-21 19:05:17,955 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-11-21 19:05:19,689 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-11-21 19:05:19,795 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 89 ms. Found 1 JDBC repository interface.
+2024-11-21 19:05:20,666 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-11-21 19:05:22,420 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@32e697ac
+2024-11-21 19:05:22,423 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-11-21 19:05:24,076 INFO o.s.b.StartupInfoLogger [main] Started MovieApplicationTests in 6.781 seconds (process running for 8.561)
+2024-11-21 19:05:25,915 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-11-21 19:05:26,549 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
